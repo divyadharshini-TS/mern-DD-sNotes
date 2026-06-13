@@ -1,22 +1,15 @@
 {
   "name": "ddsnotes-root",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "DD'sNotes — a small MERN note-taking app (frontend + backend) created from a ThinkBoard fork and adapted for personal use.",
+  "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node backend/src/server.js",
     "install:all": "cd backend && npm install && cd ../frontend && npm install",
-    "build:frontend": "cd frontend && npm run build"
-  }
-}
-{
-  "name": "mern",
-  "version": "1.0.0",
-  "description": "DD'sNotes — a small MERN note-taking app (frontend + backend) created from a ThinkBoard fork and adapted for personal use.",
-
-  "main": "index.js",
-  "scripts": {
-    "build": "npm install --prefix backend && npm install --prefix && npm run build --prefix frontend",
-    "start": "npm run start --prefix backend"
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run install:all && npm run build:frontend"
   },
   "repository": {
     "type": "git",
@@ -25,7 +18,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/divyadharshini-TS/mern-DD-sNotes/issues"
   },
