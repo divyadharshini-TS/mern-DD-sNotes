@@ -5,12 +5,14 @@ import { connectDB } from "./config/db.js";
 import rateLimiter from "./middleware/rateLimiter.js";
 import dotenv from "dotenv";
 import path from "path";
+import { fileURLToPath } from "url";
 import net from "net";
 
 dotenv.config();
 const app = express();
 const START_PORT = Number(process.env.PORT) || 5001;
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // middleware
 if (process.env.NODE_ENV !== "production") {
